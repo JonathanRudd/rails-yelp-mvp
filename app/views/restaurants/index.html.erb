@@ -1,2 +1,14 @@
 <h1>Hello I am the index page</h1>
-<p>Find me in app/views/restaurants/index.html.erb</p>
+
+
+    <% @restaurants.each do |restaurant| %>
+      <tr>
+        <td><%= restaurant.name %></td>
+        <td><%= restaurant.address %></td>
+        <td><%= restaurant.category %></td>
+        <td><%= link_to 'Show', restaurant %></td>
+
+      </tr>
+    <% end %>
+
+<%= link_to 'New Restaurant', new_restaurant_path %>
